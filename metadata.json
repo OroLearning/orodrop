@@ -1,0 +1,8 @@
+{
+  "name": "OroDrop",
+  "description": "A high-conversion 14-day Instagram story sequence generator for digital creators, designed with a premium, minimalist aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
