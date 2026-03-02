@@ -54,7 +54,7 @@ export const generateStorySequence = async (
   previousResult?: LaunchSequence
 ): Promise<LaunchSequence> => {
   // Initialize the SDK with the environment API key
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   
   const contents: any[] = [{ text: prompt }];
   
@@ -134,7 +134,7 @@ CRITICAL CONSTRAINTS:
   return withRetry(async () => {
     // Generate content with structured output
     const response = await ai.models.generateContent({
-      model: "gemini-3-pro-preview",
+      model: "gemini-2.0-flash-001",
       contents: { parts: contents },
       config: {
         systemInstruction,
