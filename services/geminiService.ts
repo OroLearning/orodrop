@@ -138,6 +138,12 @@ CRITICAL CONSTRAINTS:
       contents: { parts: contents },
 config: {
   systemInstruction,
+  responseMimeType: "application/json",
+  responseSchema: {
+    type: Type.OBJECT,
+    properties,
+    required: ["productName", "audience", "sequence"],
+  },
 },
     });
 
