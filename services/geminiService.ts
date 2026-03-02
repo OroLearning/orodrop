@@ -136,15 +136,9 @@ CRITICAL CONSTRAINTS:
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: { parts: contents },
-      config: {
-        systemInstruction,
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties,
-          required: ["productName", "audience", "sequence"],
-        },
-      },
+config: {
+  systemInstruction,
+},
     });
 
     if (!response.text) throw new Error("Neural output failed.");
