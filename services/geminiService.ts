@@ -54,7 +54,7 @@ export const generateStorySequence = async (
   previousResult?: LaunchSequence
 ): Promise<LaunchSequence> => {
   // Initialize the SDK with the environment API key
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
   
   const contents: any[] = [{ text: prompt }];
   
