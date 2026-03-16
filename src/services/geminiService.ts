@@ -3,7 +3,7 @@
  * Handles all communication with the Google Gemini API.
  */
 
-import { GoogleGenAI, Type, ThinkingLevel } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 import { LaunchSequence } from "../types";
 
 /**
@@ -135,11 +135,11 @@ CONSTRAINTS: Audience < 6 words. CTAs < 5 words. Visuals must be high-end.`;
   return withRetry(async () => {
     // Generate content with structured output
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: { parts: contents },
-      config: {
-        systemInstruction,
-        thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+model: "gemini-2.5-flash",
+contents: { parts: contents },
+config: {
+  systemInstruction,
+
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
