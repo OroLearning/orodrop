@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OroDrop - High-Conversion Strategy Engine</title>
+    
+    <!-- Google Analytics Integration -->
+    <!-- REPLACE 'G-XXXXXXXXXX' with your actual Measurement ID when ready to deploy -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- End Google Analytics Integration -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
@@ -25,9 +38,10 @@
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fcfdfe;
-            background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
-            background-size: 40px 40px;
+            background-color: #ebebeb;
+            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.22) 1.43px, transparent 1.63px);
+            background-size: 36px 36px;
+            background-attachment: fixed;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -35,7 +49,7 @@
         
         body.dark {
             background-color: #121212;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.43px, transparent 1.63px);
             color: #fcfdfe;
         }
 
@@ -103,33 +117,36 @@
 
         /* Custom Scrollbar for Dashboard */
         .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
+          width: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #e2e8f0;
+          background: rgba(0,0,0,0.03);
           border-radius: 10px;
         }
+        .dark .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255,255,255,0.03);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #a1a1aa;
+          border-radius: 10px;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #71717a;
+        }
         .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #334155;
+          background: #52525b;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #71717a;
         }
     </style>
 
 
-<script type="importmap">
-{
-  "imports": {
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
-  }
-}
-</script>
-  <script type="module" crossorigin src="./assets/index-BatnlGC-.js"></script>
+  <script type="module" crossorigin src="/assets/index-CRqlYD_n.js"></script>
 </head>
 <body class="antialiased">
     <div id="root"></div>
